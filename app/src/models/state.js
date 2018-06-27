@@ -2,7 +2,6 @@ import {Ball} from "./ball.js";
 import {Score} from "./score.js";
 import {Matka} from "./matka.js";
 import {Player} from "./player.js";
-import {state} from "../state/state.js"
 
 export class State{
     constructor(){
@@ -11,5 +10,11 @@ export class State{
         this.score = new Score();
         this.matkot = [new Matka(), new Matka()];
         this.players = [new Player('Tal'), new Player('Yossi')];
+
+        console.log("INIT state", this);
+    }
+
+    toString(){
+        return `Ball: ${this.ball}`;
     }
 }
