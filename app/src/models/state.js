@@ -1,7 +1,7 @@
-import {Ball} from "./ball";
-import {Score} from "./score";
-import {Matka} from "./matka";
-import {Player} from "./player";
+import {Ball} from "./ball.js";
+import {Score} from "./score.js";
+import {Matka} from "./matka.js";
+import {Player} from "./player.js";
 
 export class State{
     constructor(){
