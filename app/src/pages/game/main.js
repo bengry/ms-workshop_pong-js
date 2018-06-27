@@ -1,7 +1,7 @@
 import {State} from "./models/state.js";
 import {Renderer} from "./renderer.js";
 
-const INITIAL_BALL_SPEED = 1;
+const INITIAL_BALL_SPEED = 0.002;
 
 
 class Pong{
@@ -33,6 +33,19 @@ class Pong{
 
     moveMatka(matka, isUp){
         this.state.matkot[matka].nextPosition(isUp);
+    }
+
+    handleBallMove(){
+        this.ball.nextPosition();
+
+
+    }
+
+    ballHitMatka(){
+        if(this.ball.position[0] == 0 && 
+            (this.ball.position[1] > this.matkot[0].yPosition && this.ball.position[1] < this.matkot[0].yPosition + 0.1)){
+                console.log('in matka');
+            }
     }
 }
 
