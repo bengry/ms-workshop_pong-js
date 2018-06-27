@@ -1,4 +1,4 @@
-import {game} from "../pages/game/main.js"
+import {game} from "./main.js"
 document.addEventListener("keyup", function(e){
 
     console.log(e.keyCode)
