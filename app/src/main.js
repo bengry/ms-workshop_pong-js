@@ -1,11 +1,22 @@
 import {State} from "./models/state.js";
 
-let state;
+const INITIAL_BALL_SPEED = 1;
 
-init();
+game = new Pong;
 
-function init(){
-    state = new State();
+class Pong{
+    constructor(){
+        this.state = new State();
+    }
 
-    console.log("YEAH!", state);
+    start(){
+        this.state.ball.speed = INITIAL_BALL_SPEED;
+
+    }
+
+    nextState(){
+        this.state = Object.create(this.state)
+        this.state.ball.nextPosition();
+        return this.state;
+    }
 }
