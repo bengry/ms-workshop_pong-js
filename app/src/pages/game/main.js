@@ -1,4 +1,5 @@
 import {State} from "./models/state.js";
+import {Renderer} from "./renderer.js";
 
 const INITIAL_BALL_SPEED = 1;
 
@@ -6,6 +7,7 @@ const INITIAL_BALL_SPEED = 1;
 class Pong{
     constructor(){
         this.state = new State();
+        this.renderer = new Renderer();
         this.start();
     }
 
@@ -24,7 +26,7 @@ class Pong{
 
     frame(){
         requestAnimationFrame(() => {
-            this.nextState();
+            this.renderer.paint(this.nextState());
             this.frame();
         });
     }

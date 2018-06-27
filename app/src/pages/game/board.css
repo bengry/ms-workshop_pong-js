@@ -8,18 +8,18 @@
 }
 
 .matka {
-    width: 20px;
-    height: 100px;
+    width: 10px;
+    height: 80px;
     position: absolute;
     background: white;
 }
 
 #matka1 {
-    left: 0
+    left: 2px;
 }
 
 #matka2 {
-    right: 0
+    right: 2px;
 }
 
 #ball {
