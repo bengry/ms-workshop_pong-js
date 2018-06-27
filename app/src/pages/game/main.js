@@ -34,4 +34,4 @@ class Pong{
     }
 }
 
-let game = new Pong;
+export let game = new Pong;
