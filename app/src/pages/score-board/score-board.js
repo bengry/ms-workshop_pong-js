@@ -1,4 +1,4 @@
-import { state } from '../../state/state.js';
+import { state } from '../../storage/storage.js';
 
 const scoreItemTemplate = ({ name, value }) => `
   <li class="ScoreBoard__ScoreItem">
