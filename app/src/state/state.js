@@ -1,4 +1,5 @@
 const scoresLocalStorageKey = 'scores';
+const playersLocalStorageKey = 'players';
 
 const getItem = key => JSON.parse(localStorage.getItem(key));
 
@@ -16,6 +17,18 @@ export const state = {
       }
 
       setItem(scoresLocalStorageKey, value);
+    },
+  },
+  players: {
+    get() {
+      return getItem(playersLocalStorageKey);
+    },
+    set(value) {
+      if (!Array.isArray(value)) {
+        throw new Error(`value must be an array.`);
+      }
+
+      setItem(playersLocalStorageKey, value);
     },
   },
 };
