@@ -1,5 +1,5 @@
 import {game} from "./main.js"
-document.addEventListener("keyup", function(e){
+document.addEventListener("keydown", function(e){
 
     console.log(e.keyCode)
 

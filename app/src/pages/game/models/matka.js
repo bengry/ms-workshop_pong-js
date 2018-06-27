@@ -5,6 +5,6 @@ export class Matka{
     }
 
     nextPosition(isUp){
-        this.yPosition += Math.min(1, Math.max(0, this.speed * (isUp ? -1 : 1)));
+        this.yPosition += Math.min(1, Math.max(this.yPosition * (isUp ? -1 : 1), this.speed * (isUp ? -1 : 1)));
     }
 }
