@@ -1,0 +1,30 @@
+.Intro__Container {
+  margin-top: 15%;
+  height: auto;
+  padding: 30px;
+  background-color: #44464a;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.Intro__Form {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.Intro__FieldContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.Intro__Form__SubmitButton {
+  margin-top: 10px;
+  padding: 0.25rem 1rem;
+}
