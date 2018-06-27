@@ -30,7 +30,7 @@ class Pong{
     }
 
     moveMatka(matka, isUp){
-        
+        this.state.matkot[matka].nextPosition(isUp);
     }
 }
 
