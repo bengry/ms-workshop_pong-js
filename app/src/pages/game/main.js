@@ -2,6 +2,7 @@ import { State } from './models/state.js';
 import { Renderer } from './renderer.js';
 
 const INITIAL_BALL_SPEED = 0.002;
+const MATKA_SIZE = 0.1;
 
 class Pong {
   constructor() {
@@ -15,6 +16,8 @@ class Pong {
 
   start() {
     this.state.ball.speed = INITIAL_BALL_SPEED;
+    this.state.matkot[0].size = MATKA_SIZE;
+    this.state.matkot[1].size = MATKA_SIZE;
     this.frame();
   }
 
@@ -22,7 +25,7 @@ class Pong {
     const prevState = this.state;
     this.state = Object.create(this.state);
     Object.assign(this.state, prevState);
-    this.state.ball.nextPosition();
+    this.state.ball.handleBallMove();
     return this.state;
   }
 
@@ -39,15 +42,30 @@ class Pong {
 
   handleBallMove() {
     this.ball.nextPosition();
+
+    if (this.ballHitMatka) {
+      setBallAngle(true);
+    } else if (this.state.ball[0] === 0 || this.state.ball[0] === 1) {
+      log.console('goallllllllllllll!');
+    } else if (this.ball.position[1] === 0 || this.ball.position[1] === 1) {
+      setBallAngle(false);
+    }
   }
 
   ballHitMatka() {
     if (
       this.ball.position[0] == 0 &&
       (this.ball.position[1] > this.matkot[0].yPosition &&
-        this.ball.position[1] < this.matkot[0].yPosition + 0.1)
+        this.ball.position[1] < this.matkot[0].yPosition + MATKA_SIZE)
     ) {
-      console.log('in matka');
+      return true;
+    }
+    if (
+      this.ball.position[0] == 1 &&
+      (this.ball.position[1] > this.matkot[1].yPosition &&
+        this.ball.position[1] < this.matkot[1].yPosition + MATKA_SIZE)
+    ) {
+      return true;
     }
   }
 
