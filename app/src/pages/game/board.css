@@ -1,6 +1,14 @@
+.Container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 #board {
-    width: 600px;
-    height: 300px;
+    width: 80%;
+    height: 50vh;
     margin: 100px auto;
     position: relative;
     border: 1px solid gray;
@@ -28,6 +36,17 @@
     background: yellow;
     border-radius: 50%;
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
+}
+
+.ScoreContainer {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Score {
+    color: #fff;
 }

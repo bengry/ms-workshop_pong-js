@@ -2,6 +2,7 @@ export class Matka{
     constructor(speed){
         this.yPosition = 0;
         this.speed = speed;
+        this.size = 0;
     }
 
     nextPosition(isUp){
