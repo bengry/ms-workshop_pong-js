@@ -7,4 +7,6 @@ body {
   align-items: flex-start;
   font-family: Helvetica, sans-serif;
   color: #daecec;
+  margin: 0;
+  padding: 0;
 }

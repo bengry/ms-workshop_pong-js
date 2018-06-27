@@ -1,52 +1,66 @@
-import {State} from "./models/state.js";
-import {Renderer} from "./renderer.js";
+import { State } from './models/state.js';
+import { Renderer } from './renderer.js';
 
 const INITIAL_BALL_SPEED = 0.002;
 
+class Pong {
+  constructor() {
+    this.state = new State();
+    this.renderer = new Renderer(this.state);
+    this.start();
 
-class Pong{
-    constructor(){
-        this.state = new State();
-        this.renderer = new Renderer(this.state);
-        this.start();
+    this.player1ScoreEl = document.querySelector('#player1Score');
+    this.player2ScoreEl = document.querySelector('#player2Score');
+  }
+
+  start() {
+    this.state.ball.speed = INITIAL_BALL_SPEED;
+    this.frame();
+  }
+
+  nextState() {
+    const prevState = this.state;
+    this.state = Object.create(this.state);
+    Object.assign(this.state, prevState);
+    this.state.ball.nextPosition();
+    return this.state;
+  }
+
+  frame() {
+    requestAnimationFrame(() => {
+      this.renderer.paint(this.nextState());
+      this.frame();
+    });
+  }
+
+  moveMatka(matka, isUp) {
+    this.state.matkot[matka].nextPosition(isUp);
+  }
+
+  handleBallMove() {
+    this.ball.nextPosition();
+  }
+
+  ballHitMatka() {
+    if (
+      this.ball.position[0] == 0 &&
+      (this.ball.position[1] > this.matkot[0].yPosition &&
+        this.ball.position[1] < this.matkot[0].yPosition + 0.1)
+    ) {
+      console.log('in matka');
     }
+  }
 
-    start(){
-        this.state.ball.speed = INITIAL_BALL_SPEED;
-        this.frame()
-    }
+  updateScore({ scoredPlayer }) {
+    this._updateScore(
+      scoredPlayer === 1 ? this.player1ScoreEl : this.player2ScoreEl
+    );
+  }
 
-    nextState(){
-        const prevState = this.state;
-        this.state = Object.create(this.state);
-        Object.assign(this.state, prevState);
-        this.state.ball.nextPosition();
-        return this.state;
-    }
-
-    frame(){
-        requestAnimationFrame(() => {
-            this.renderer.paint(this.nextState());
-            this.frame();
-        });
-    }
-
-    moveMatka(matka, isUp){
-        this.state.matkot[matka].nextPosition(isUp);
-    }
-
-    handleBallMove(){
-        this.ball.nextPosition();
-
-
-    }
-
-    ballHitMatka(){
-        if(this.ball.position[0] == 0 && 
-            (this.ball.position[1] > this.matkot[0].yPosition && this.ball.position[1] < this.matkot[0].yPosition + 0.1)){
-                console.log('in matka');
-            }
-    }
+  _updateScore(element) {
+    const score = Number(element.textContent);
+    element.textContent = score + 1;
+  }
 }
 
-export let game = new Pong;
+export let game = new Pong();
