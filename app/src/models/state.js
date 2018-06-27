@@ -19,4 +19,17 @@ export class State{
     toString(){
         return `Ball: ${this.ball}`;
     }
+
+    handleBallMove(){
+        this.ball.nextPosition();
+
+
+    }
+
+    ballHitMatka(){
+        if(this.ball.position[0] == 0 && 
+            (this.ball.position[1] > this.matkot[0].yPosition && this.ball.position[1] < this.matkot[0].yPosition + 0.1)){
+                console.log('in matka');
+            }
+    }
 }
