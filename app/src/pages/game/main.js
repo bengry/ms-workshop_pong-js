@@ -7,7 +7,7 @@ const INITIAL_BALL_SPEED = 1;
 class Pong{
     constructor(){
         this.state = new State();
-        this.renderer = new Renderer();
+        this.renderer = new Renderer(this.state);
         this.start();
     }
 
