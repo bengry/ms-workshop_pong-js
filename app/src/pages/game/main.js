@@ -25,7 +25,7 @@ class Pong {
     const prevState = this.state;
     this.state = Object.create(this.state);
     Object.assign(this.state, prevState);
-    this.state.ball.handleBallMove();
+    this.handleBallMove();
     return this.state;
   }
 
