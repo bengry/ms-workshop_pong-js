@@ -1,4 +1,4 @@
-class Ball{
+export class Ball{
 
     constructor(speed, position, angle){
         this.speed = speed;

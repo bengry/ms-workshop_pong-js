@@ -1,0 +1,50 @@
+body {
+  background: #2a2a2a;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: Helvetica, sans-serif;
+  color: #daecec;
+}
+
+.ScoreBoard__Container {
+  margin-top: 15%;
+  height: auto;
+  padding: 30px;
+  background-color: #44464a;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.ScoreBoard__Scores {
+  width: 100%;
+}
+
+.ScoreBoard__Scores > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ScoreBoard__ScoreItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.ScoreBoard__ScoreItem__Name {
+}
+
+.ScoreBoard__ScoreItem__Score {
+  --font-size: 1.5rem;
+  background: #2a2a2a;
+  text-align: center;
+  line-height: var(--font-size);
+  width: var(--font-size);
+  height: var(--font-size);
+  border-radius: 50%;
+}
