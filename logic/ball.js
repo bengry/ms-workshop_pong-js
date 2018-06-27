@@ -1,8 +1,8 @@
 class Ball{
 
-    constructor(){
-        this.speed = 0;
-        this.position = [0,0];
-        this.angle = 0;
+    constructor(speed, position, angle){
+        this.speed = speed;
+        this.position = position;
+        this.angle = angle;
     }
 }
