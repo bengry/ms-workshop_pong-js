@@ -44,7 +44,7 @@ class Pong {
     handleBallMove() {
         this.state.ball.nextPosition();
 
-        if (this.ballHitMatka) {
+        if (this.ballHitMatka()) {
             this.setBallAngle(true);
         } else if (this.state.ball[0] === 0 || this.state.ball[0] === 1) {
             this.updateScore({scoredPlayer: this.state.ball[0] ? 0 : 1});
