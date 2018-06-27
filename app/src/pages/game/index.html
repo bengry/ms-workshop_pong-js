@@ -4,19 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Best PONG Eveerrrrr</title>
+    <link rel="stylesheet" type="text/css" href="../../../../styles.css">
     <link rel="stylesheet" type="text/css" href="./board.css">
 </head>
 
 <body>
 
-    <div id="board">
-        <span id="ball"></span>
-        <span id="matka1" class="matka"></span>
-        <span id="matka2" class="matka"></span>
+    <div class="Container">
+        <div class="ScoreContainer">
+            <div class="Score Score__Player1">
+                <span id="player1Score">0</span>
+                <span> | Player 1</span>
+            </div>
+            <div class="Score__Player2">
+                <span>Player 2 | </span>
+                <span id="player2Score">0</span>
+            </div>
+        </div>
+
+        <div id="board">
+            <span id="ball"></span>
+            <span id="matka1" class="matka"></span>
+            <span id="matka2" class="matka"></span>
+        </div>
     </div>
 
     <script type="module" src="./renderer.js"></script>
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./user-input.js"></script>
 </body>
 
 </html>

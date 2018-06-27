@@ -46,6 +46,6 @@ new Intro({
   onSave: players => {
     state.players.set(players);
 
-    window.location.replace('../game/index.html');
+    window.location.href = '../game/index.html';
   },
 });
