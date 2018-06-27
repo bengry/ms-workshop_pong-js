@@ -28,6 +28,10 @@ class Pong{
             this.frame();
         });
     }
+
+    moveMatka(matka, isUp){
+        
+    }
 }
 
 let game = new Pong;
